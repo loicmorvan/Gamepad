@@ -2,5 +2,5 @@
 
 public interface IGamepadFactory
 {
-    IGamepad Create();
+    IGamepad Create(Index index);
 }

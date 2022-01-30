@@ -5,6 +5,8 @@ namespace Gamepad {
 		public ref class GamepadXInput : IGamepad
 		{
 		public:
+			GamepadXInput(Gamepad::Index index);
+
 			property bool A
 			{
 				virtual bool get();

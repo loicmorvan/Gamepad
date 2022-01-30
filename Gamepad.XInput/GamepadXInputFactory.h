@@ -5,7 +5,7 @@ namespace Gamepad {
 		public ref class GamepadXInputFactory : IGamepadFactory
 		{
 		public:
-			virtual IGamepad^ Create();
+			virtual IGamepad^ Create(Gamepad::Index index);
 		};
 	}
 }

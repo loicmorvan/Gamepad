@@ -1,8 +1,24 @@
-#include "pch.h"
-
 #include "GamepadXInput.h"
+#include <winerror.h>
+#include <Xinput.h>
 
 using namespace Gamepad::XInput;
+
+GamepadXInput::GamepadXInput(Gamepad::Index index)
+{
+	DWORD userIndex = (DWORD)index;
+	XINPUT_STATE state;
+	DWORD dwResult = XInputGetState(userIndex, &state);
+	if (dwResult == ERROR_SUCCESS)
+	{
+		// Controller is connected
+	}
+	else
+	{
+		// Controller is not connected
+		throw gcnew System::NotSupportedException();
+	}
+}
 
 bool GamepadXInput::A::get()
 {
